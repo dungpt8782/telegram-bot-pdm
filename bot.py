@@ -12,11 +12,7 @@ async def main():
     application.add_handler(CommandHandler("start", start))
 
     print("Bot đang chạy...")
-    await application.initialize()
-    await application.start()
-    await application.updater.start_polling()
-    await application.updater.idle()
+    await application.run_polling()
 
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    asyncio.run(main())
